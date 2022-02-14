@@ -1,0 +1,32 @@
+import React from 'react'
+import { Link } from 'react-router-dom';
+import anh2 from '../assets/image/anh2.jpg';
+
+function SidebarPost({blogs}) {
+    console.log(blogs);
+ 
+
+
+    
+    return (
+        <div className="sidebar__single sidebar__post">
+        <h3 className="sidebar__title">Tin cùng chuyên mục</h3>
+            <ul className="sidebar__post-list list-unstyled">
+                {
+                    blogs.map((blog) =>
+                    <li>
+                        <div className="sidebar__post-image">
+                            <div style={{width: '61px', height: '63px', backgroundImage: `url("${blog.image}")`}} className="bg-img" />
+                        </div>
+                        <div className="sidebar__post-content">
+                            <h3><Link to="#">{blog.title}</Link></h3>
+                        </div>
+                    </li>
+)
+                }
+            </ul>
+        </div>
+    )
+}
+
+export default SidebarPost
